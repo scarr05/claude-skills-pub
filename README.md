@@ -16,26 +16,26 @@ Claude skills are structured prompts and reference materials that extend Claude'
 
 ## Quick Start
 
-### For Claude.ai Users (Projects)
+### For Claude.ai Users
 
-1. Create a new Claude Project
-2. Add the skill files to your project's knowledge base:
+1. Add the skill files to a zip file:
    - `SKILL.md` (main skill file)
    - `references/` folder (all reference files)
-3. Ask Claude to create diagrams:
+2. Goto users > settings > capabilities, scroll to skills and click Add
+3. Select upload a skill passing in the .zip file created earlier. 
+4. Ensure the radio button is selected on that skill  
+3. Ask Claude to create diagrams from with a chat. :
 
 ```
 Create an AWS architecture diagram showing a 3-tier web application 
 with ALB, ECS, and RDS across two availability zones.
 ```
 
-### For Claude API / Claude Desktop (MCP)
+## Hints & Tips 
 
-Add the skill files to your system prompt or use as reference materials in your prompts.
+Provide the claude chat context, i've had good results disucssing the architecture requirments and asking for a wireframe or mermaid diagram of the architecture first, then calling for the skill to convert into a drawio file. 
 
-### For Anthropic Workbench
 
-Paste the contents of `SKILL.md` into your system prompt, with reference files as needed.
 
 ## Repository Structure
 
@@ -214,8 +214,12 @@ Claude can't interact with visual editors, but it can generate structured XML. T
 
 ### Can Claude modify existing diagrams?
 
-Yes, if you provide the XML content of an existing `.drawio` file, Claude can add elements, change styles, or reorganise the layout.
+Yes in theory, if you provide the XML content of an existing `.drawio` file, Claude can add elements, change styles, or reorganise the layout.
 
 ### What's the maximum diagram complexity?
 
-Claude can handle diagrams with 50-100+ elements, though very complex diagrams may benefit from being built incrementally across multiple prompts.
+Untested but Claude can handle diagrams with 50-100+ elements, though very complex diagrams may benefit from being built incrementally across multiple prompts.
+
+### Can this generate diagrams from existing scripts?
+
+Untested, but Claude is well versed in traditional IaC syntax. the end goal is to be able to use this in an agentic framework and CI/CD pipeline to auto generate on PR's or even providing additional tooling to pull the inventory from an account and create the diagram from deployed architecture too. 
