@@ -27,9 +27,26 @@ Claude skills are structured prompts and reference materials that extend Claude'
 3. Ask Claude to create diagrams from with a chat. :
 
 ```
-Create an AWS architecture diagram showing a 3-tier web application 
+Create an AWS architecture diagram using the drawio-skill showing a 3-tier web application 
 with ALB, ECS, and RDS across two availability zones.
 ```
+
+### For Claude Code Users 
+
+1. Add the skill to the ./claude/skills/drawio-skill directory (in either your root or project directory. 
+2. Create a new session on claude code (2.1.7 does support auto reload, i beleive?)
+3. either prompt claude to create a diagram, or use the slash (/) commands followed by prompt.
+
+```
+Create an AWS architecture diagram using the drawio-skill showing a 3-tier web application 
+with ALB, ECS, and RDS across two availability zones.
+```
+
+```
+/drawio-skill Create an AWS architecture diagram showing a 3-tier web application 
+with ALB, ECS, and RDS across two availability zones.
+```
+
 
 ## Hints & Tips 
 
